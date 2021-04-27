@@ -5,17 +5,17 @@
 
 {% block body %}
 
-<h3>Add A New Recipe</h3>
+<h3 style="color:brown;">Add A New Recipe</h3>
 <hr>
 <form id="new_recipe" method="POST" action="{{ url_for('add_recipe') }}">
 
     <div class="form-group">
-        <label for="recipe_name"> Recipe name: </label>
+        <label for="recipe_name" style="color:brown;"> Recipe name: </label>
         <input type="text" id="recipe_name" name="recipe_name" class="form-control" required autofocus>
     </div>
 
     <div class="form-group">
-        <label for="category" class="mr-sm-2">Food category:</label>
+        <label for="category" class="mr-sm-2" style="color:brown;">Food category:</label>
         <select name="category" class="custom-select mr-sm-2">
             <option value="" selected disabled hidden> Choose category ... </option>
             {% for category in all_categories %}
@@ -28,9 +28,9 @@
     <div id="TextBoxesGroupIngredients" class="form-group">
         <!-- ingredients -->
         <div id="TextBoxDivIngredients">
-            <label for="recipe_ingredients">Ingredients:</label>
+            <label for="recipe_ingredients" style="color:brown;">Ingredients:</label>
             <div class="d-flex">
-                <button id="addIngredient" class="btn btn-outline-success mr-1">+</button>
+                <button id="addIngredient" class="btn btn-outline-success mr-1" style=" border-color: brown; color:brown;">+</button>
                 <input id="recipe_ingredients" name="ingredients" type="text" value="" class="form-control">
             </div>
         </div>
@@ -39,31 +39,31 @@
     <div id="TextBoxesGroupPreparation" class="form-group">
         <!-- preparation steps -->
         <div id="TextBoxDivSteps">
-            <label for="preparation">Preparation Steps:</label>
+            <label for="preparation" style="color:brown;">Preparation Steps:</label>
             <div class="d-flex">
-                <button id="addStep" class="btn btn-outline-success mr-1">+</button>
+                <button id="addStep" class="btn btn-outline-success mr-1" style=" border-color: brown; color:brown;">+</button>
                 <input id="preparation" name="steps" type="text" value="" class="form-control">
             </div>
         </div>
     </div>
 
     <div class="form-group">
-        <label for="notes"> Notes: </label>
+        <label for="notes" style="color:brown;"> Notes: </label>
         <textarea id="notes" name="notes" class="form-control" rows="5" cols="50">
 
         </textarea>
     </div>
 
-        <div class="form-group"> <label for="recipe_owner"> Recipe owner: </label>
+        <div class="form-group"> <label for="recipe_owner" style="color:brown;"> Recipe owner: </label>
             <input type="text" id="recipe_owner" name="recipe_owner" class="form-control"></div>
 
-        <div class="form-group"> <label for=" added_by"> Added by: </label>
+        <div class="form-group"> <label for=" added_by" style="color:brown;" > Added by: </label>
             {% if current_user.is_authenticated %}
             <input type="text " name="added_by" class="form-control" value="{{ current_user.username }}" readonly>
             {% endif %}</div>
 
         <div>
-            <button type="submit" class="btn btn-secondary">Add New Recipe</button>
+            <button type="submit" class="btn btn-secondary"style="background-color:brown; color:white;">Add New Recipe</button>
 
         </div>
 

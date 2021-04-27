@@ -5,44 +5,44 @@
 
 {% block body %} 
 
-<h3>Edit my account</h3>
+<h3 style="color:brown;">Edit my account</h3>
   <hr>
   {% if user %}
 <form method="POST" action="{{ url_for('update_myaccount', user_id=user['_id']) }}">
 
-<div class="form-group"> <label for="first_name"> First Name: </label>
+<div class="form-group"> <label for="first_name"style="color:brown;"> First Name: </label>
   <input type="text" id="first_name" name="first_name" class="form-control" required autofocus
     value="{{ user['first_name'] }}"></div>
 
-<div class="form-group"> <label for="last_name"> Last Name: </label>
+<div class="form-group"> <label for="last_name"style="color:brown;"> Last Name: </label>
   <input type="text" id="last_name" name="last_name" class="form-control" required value="{{ user['last_name'] }}">
 </div>
 
-<div class="form-group"> <label for="email"> Email: </label>
+<div class="form-group"> <label for="email"style="color:brown;"> Email: </label>
   <input type="text" id="email" name="email" class="form-control" required value="{{ user['email'] }}"></div>
 
-<div class="form-group"> <label for="password"> Password: </label>
+<div class="form-group"> <label for="password"style="color:brown;"> Password: </label>
   <input type="text" id="password" name="password" class="form-control" required value="{{ user['password'] }}"></div>
 
-<div class="form-group"> <label for="confirm_password"> Confirm password: </label>
+<div class="form-group"> <label for="confirm_password"style="color:brown;"> Confirm password: </label>
   <input type="text" id="confirm_password" name="confirm_password" class="form-control" required
     value="{{ user['password'] }}"></div>
 
 <div class="form-group">
-  <label for="role" class="mr-sm-2">Role :</label>
+  <label for="role" class="mr-sm-2"style="color:brown;">Role :</label>
   <input type="text" id="role" name="role" class="form-control" value="{{ user['role'] }}" readonly>
 </div>
 
-<div class="form-group"> <label for="date_added"> Date Added: </label>
+<div class="form-group"> <label for="date_added"style="color:brown;"> Date Added: </label>
   <input type="text" id="date_added" name="date_added" class="form-control" required value="{{ user['date_added'] }}"
     readonly></div>
 
-<div class="form-group"> <label for="date_modified"> Date Modified: </label>
+<div class="form-group"> <label for="date_modified"style="color:brown;"> Date Modified: </label>
   <input type="text" id="date_modified" name="date_modified" class="form-control" required
     value="{{ user['date_modified'] }}" readonly></div>
 
 <div>
-  <input type="submit" value="Update my account" class="btn btn-secondary"></div>
+  <input type="submit" value="Update my account" class="btn btn-secondary" style="background-color:brown; color:white;"></div>
 
 </form>
 </div>
