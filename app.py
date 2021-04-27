@@ -29,8 +29,8 @@ APP_ROOT = os.path.join(os.path.dirname(__file__), '..')   # refers to applicati
 dotenv_path = os.path.join(APP_ROOT, '.env')
 load_dotenv(dotenv_path)
 
-mongo = os.getenv('MONGO')
-
+#mongo = os.getenv('MONGO')
+mongo = "mongodb+srv://logan-hagmeier:8kSpu7WQnmuNW9a@cluster0.smvlj.mongodb.net/hagmeier_recipe_DB?retryWrites=true&w=majority"
 client = pymongo.MongoClient(mongo)
 
 db = client['recipe_app'] # Mongo collection

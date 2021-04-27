@@ -12,7 +12,7 @@ mongo = os.getenv('MONGO')
 
 client = pymongo.MongoClient(mongo)
 
-db = client['recipe_app']
+db = client['hagmeier_recipe_DB']
 
 users = db['users']
 roles = db['roles']
@@ -69,7 +69,7 @@ def initial_database():
     user = add_role('user')
 
     # add users
-    mike = add_user('Mike', 'Colbert', 'mike@mike.com', 'abc123', 'admin')
+    mike = add_user('Logan', 'Hagmeier', 'logan@logan.com', 'abc123', 'admin')
 
     # add categories
     main = add_category('Main dishes')
