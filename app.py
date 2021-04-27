@@ -30,10 +30,10 @@ dotenv_path = os.path.join(APP_ROOT, '.env')
 load_dotenv(dotenv_path)
 
 #mongo = os.getenv('MONGO')
-mongo = "mongodb+srv://logan-hagmeier:8kSpu7WQnmuNW9a@cluster0.smvlj.mongodb.net/hagmeier_recipe_DB?retryWrites=true&w=majority"
+mongo = "mongodb+srv://recipe_user:8kSpu7WQnmuNW9a@cluster0.smvlj.mongodb.net/hagmeier_recipe_DB?retryWrites=true&w=majority"
 client = pymongo.MongoClient(mongo)
 
-db = client['recipe_app'] # Mongo collection
+db = client['hagmeier_recipe_DB'] # Mongo collection
 users = db['users'] # Mongo document
 roles = db['roles'] # Mongo document
 categories = db['categories']
