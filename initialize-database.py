@@ -8,11 +8,12 @@ APP_ROOT = os.path.join(os.path.dirname(__file__), '..')   # refers to applicati
 dotenv_path = os.path.join(APP_ROOT, '.env')
 load_dotenv(dotenv_path)
 
-mongo = os.getenv('MONGO')
+#mongo = os.getenv('MONGO')
+mongo = "mongodb+srv://logan-hagmeier:8kSpu7WQnmuNW9a@cluster0.smvlj.mongodb.net/hagmeier_recipe_DB?retryWrites=true&w=majority"
 
 client = pymongo.MongoClient(mongo)
 
-db = client['recipe_app']
+db = client['hagmeier_recipe_DB']
 
 users = db['users']
 roles = db['roles']
@@ -69,7 +70,7 @@ def initial_database():
     user = add_role('user')
 
     # add users
-    mike = add_user('Mike', 'Colbert', 'mike@mike.com', 'abc123', 'admin')
+    mike = add_user('Logan', 'Hagmeier', 'logan@logan.com', 'abc123', 'admin')
 
     # add categories
     main = add_category('Main dishes')

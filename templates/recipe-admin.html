@@ -5,12 +5,12 @@
 
 {% block body %} 
 
-<h1>Recipe Admin Page</h1>
+<h1 style="color:brown;">Recipe Admin Page</h1>
 <hr>
 <div class="admin_left">
-    <h3 >Food Categories</h3>
+    <h3 style="color:brown;">Food Categories</h3>
     <form method='POST' action="{{url_for('add_category')}}">
-        <input type="text" name="new_category" placeholder="add new category"><input type="submit" value="Submit">
+        <input type="text" name="new_category" placeholder="add new category"><input type="submit" value="Submit" style="background-color:brown;">
     </form>
     <hr>
 
@@ -24,9 +24,9 @@
 </div>
 <br clear="all">
 
-<h3>All Recipes</h3>
+<h3 style="color:brown;">All Recipes</h3>
 <form method="GET" action="{{ url_for('add_recipe') }}">
-    <button type="submit" class="btn btn-info">Add a new recipe</button>
+    <button type="submit" class="btn btn-info" style="background-color: brown;">Add a new recipe</button>
 </form>
 
 <br>
@@ -34,11 +34,11 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th scope="col">Recipe Name</th>
-            <th scope="col">Category</th>
-            <th scope="col">Recipe Owner</th>
-            <th scope="col">Added By </th>
-            <th scope="col">Date Added</th>
+            <th scope="col" style="color:brown">Recipe Name</th>
+            <th scope="col" style="color:brown">Category</th>
+            <th scope="col" style="color:brown">Recipe Owner</th>
+            <th scope="col" style="color:brown" >Added By </th>
+            <th scope="col" style="color:brown" >Date Added</th>
         </tr>
     </thead>
 

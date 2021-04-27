@@ -13,8 +13,8 @@
 
 <body>
   <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="/">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+      <a class="navbar-brand" href="/" style="background-color:brown;">
         <svg class="bi bi-house-door" width="2rem" height="2rem" viewBox="0 0 16 16" fill="currentColor"
           xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd"
@@ -28,36 +28,36 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" >
 
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             {% if current_user.is_authenticated %}
-            <a class="nav-link" href="{{ url_for('logout')}}">Logout</a>
+            <a class="nav-link" href="{{ url_for('logout')}}" style="color:brown;">Logout</a>
             <a class="nav-link"
-              href="{{ url_for('my_account', user_id=current_user['_id']) }}">{{ current_user.username }}</a>
+              href="{{ url_for('my_account', user_id=current_user['_id']) }}" style="color:brown;">{{ current_user.username }}</a>
             {% else %}
             <a class="nav-link" href="{{ url_for('login')}}">Login</a>
             {% endif %}
           </li>
           {% if current_user['role'] == 'admin' %}
           <li>
-            <a class="nav-link" href="{{ url_for('admin_recipes') }}">Recipe Administration</a>
+            <a class="nav-link" href="{{ url_for('admin_recipes') }}"style="color:brown;">Recipe Administration</a>
           </li>
           <li>
-            <a class="nav-link" href="{{ url_for('admin_users') }}">User Administration</a>
+            <a class="nav-link" href="{{ url_for('admin_users') }}"style="color:brown;">User Administration</a>
           </li>
           {% endif %}
           {% if current_user['role'] == 'admin' or current_user['role'] == 'contributor' %}
           <li>
-            <a class="nav-link" href="{{ url_for('add_recipe') }}">Add Recipe</a>
+            <a class="nav-link" href="{{ url_for('add_recipe') }}"style="color:brown;">Add Recipe</a>
           </li>
           {% endif %}
           <li>
-            <a class="nav-link" href="{{ url_for('view_recipes') }}">Recipes</a>
+            <a class="nav-link" href="{{ url_for('view_recipes') }}"style="color:brown;">Recipes</a>
           </li>
           <li>
-            <a class="nav-link" href="{{ url_for('about') }}">About</a>
+            <a class="nav-link" href="{{ url_for('about') }}" style="color:brown;">About</a>
           </li>
         </ul>
 
