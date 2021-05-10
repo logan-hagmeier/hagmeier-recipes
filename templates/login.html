@@ -2,10 +2,14 @@
 {% extends 'base.html' %}
 
 {% block title %} My Recipes Login {% endblock %}
-{% block pageDescription%} {% endblock %}<meta
+{% block pageDescription%} <meta
   name="description" content="Login Page for Hagmeier-Recipes"/>
-
+  {% endblock %}
 {% block body %} 
+<link 
+rel="stylesheet" 
+type="text/css" 
+href="{{ url_for('static', filename='css/stylesheet.css') }}"/>
 
 <form method=POST action="{{ url_for('login') }}">
 <p>
