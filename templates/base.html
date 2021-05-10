@@ -4,19 +4,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %} {% endblock%}</title>
-  {% block pageDescription%} {% endblock %}<meta
+  <title>{% block title %} Base Page - Hagmeier Recipes{% endblock%}</title>
+  {% block pageDescription%} <meta
   name="description" content="A website of favorite recipes designed by the Hagmeier family"/>
-  
+  {% endblock %}
 
   </head>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+  
+  <link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{{ url_for('static', filename='css/stylesheet.css') }}"/>
+
+
+<meta name="description" content="A website of Favorite Recipes for the Hagmeier family!" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="A website of Favorite Recipes for the Hagmeier family!">
+<meta name="twitter:site" content="@publisher_handle">
+<meta name="twitter:title" content="Welcome to Hagmeier-Recipe.me">
+<meta name="twitter:description" content="A website of Favorite Recipes for the Hagmeier family! ">
+<meta name="twitter:creator" content="@loganhagmeier68">
+<meta name="twitter:image" content="http://www.hagmeier-recipes.me/static/Images/food-drink.jpg">
+
+<!-- Open Graph data -->
+<meta property="og:title" content="Hagmeier-Recipes.me" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.hagmeier-recipes.me/" />
+<meta property="og:image" content="http://www.hagmeier-recipes.me/static/Images/food-drink.jpg" />
+<meta property="og:description" content="A website of Favorite Recipes for the Hagmeier family!" />
+<meta property="og:site_name" content="Hagmeier-Recipes" />
 
 </head>
-
 <body>
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
@@ -125,6 +147,23 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"></script>
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BCB308JYBD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BCB308JYBD');
+</script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BCB308JYBD');
+</script>
 
     <!-- Add & Remove Ingredients & Preparation Steps  -->
     <script>
