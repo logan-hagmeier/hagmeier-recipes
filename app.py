@@ -10,6 +10,7 @@ from functools import wraps
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+bcrypt = Bcrypt(app)
 
 ############ TO DO #############
 
