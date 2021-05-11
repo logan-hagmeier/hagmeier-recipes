@@ -4,3 +4,7 @@ label.print{
 }
 
 .btn-primary{ background-color: lightblue !important; color: black !important; border:lightblue !important; }
+
+.btn btn-primary{ background-color: lightblue !important; color: black !important; border:lightblue !important; }
+
+.btn-danger{ background-color: lightblue !important; color: black !important; border:lightblue !important; }
