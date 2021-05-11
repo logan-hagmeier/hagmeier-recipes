@@ -23,8 +23,6 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 ################################
 
-
-
 ## necessary for python-dotenv ##
 APP_ROOT = os.path.join(os.path.dirname(__file__), '..')   # refers to application_top
 dotenv_path = os.path.join(APP_ROOT, '.env')
@@ -81,7 +79,7 @@ class User:
 
 @app.errorhandler(404)
 def not_found(e):
-    return render_template('error-page.html')
+    return render_template('error-page.html'), 404
 
 
 
