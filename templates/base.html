@@ -2,6 +2,12 @@
 <html lang="en">
 
 <head>
+  <link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{{ url_for('static', filename='css/stylesheet.css') }}"/>
+
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %} Base Page - Hagmeier Recipes{% endblock%}</title>
@@ -20,29 +26,33 @@
   href="{{ url_for('static', filename='css/stylesheet.css') }}"/>
 
 
-<meta name="description" content="A website of Favorite Recipes for the Hagmeier family!" />
+  <meta name="description" content="Web application for the Hagmeier family!" />
 
-<!-- Twitter Card data -->
-<meta name="twitter:card" content="A website of Favorite Recipes for the Hagmeier family!">
-<meta name="twitter:site" content="@publisher_handle">
-<meta name="twitter:title" content="Welcome to Hagmeier-Recipe.me">
-<meta name="twitter:description" content="A website of Favorite Recipes for the Hagmeier family! ">
-<meta name="twitter:creator" content="@loganhagmeier68">
-<meta name="twitter:image" content="http://www.hagmeier-recipes.me/static/Images/food-drink.jpg">
-
-<!-- Open Graph data -->
-<meta property="og:title" content="Hagmeier-Recipes.me" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.hagmeier-recipes.me/" />
-<meta property="og:image" content="http://www.hagmeier-recipes.me/static/Images/food-drink.jpg" />
-<meta property="og:description" content="A website of Favorite Recipes for the Hagmeier family!" />
-<meta property="og:site_name" content="Hagmeier-Recipes" />
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@publisher_handle">
+  <meta name="twitter:title" content="Hagmeier-Recipe">
+  <meta name="twitter:description" content="Hagmeier family recipe application">
+  <meta name="twitter:creator" content="@author_handle">
+  <-- Twitter Summary card images must be at least 120x120px -->
+  <meta name="twitter:image" content="http://hagmeier-recipe.me/static/Images/food-drink.jpg">
+  
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Title Here" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://www.example.com/" />
+  <meta property="og:image" content="http://example.com/image.jpg" />
+  <meta property="og:description" content="Description Here" />
+  <meta property="og:site_name" content="Site Name, i.e. Moz" />
+  <meta property="fb:admins" content="Facebook numeric ID" />
+  
+  
 
 </head>
 <body>
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
-      <a class="navbar-brand" href="/" style="background-color:brown;">
+      <a class="navbar-brand" href="" style="background-color:brown;">
         <svg class="bi bi-house-door" width="2rem" height="2rem" viewBox="0 0 16 16" fill="currentColor"
           xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd"
@@ -61,38 +71,38 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             {% if current_user.is_authenticated %}
-            <a class="nav-link" href="{{ url_for('logout')}}" style="color:brown;">Logout</a>
+            <a class="nav-link" href="{{ url_for('logout')}}" style="color:azure;">Logout</a>
             <a class="nav-link"
-              href="{{ url_for('my_account', user_id=current_user['_id']) }}" style="color:brown;">{{ current_user.username }}</a>
+              href="{{ url_for('my_account', user_id=current_user['_id']) }}" style="color:azure;">{{ current_user.username }}</a>
             {% else %}
             <a class="nav-link" href="{{ url_for('login')}}">Login</a>
             {% endif %}
           </li>
           {% if current_user['role'] == 'admin' %}
           <li>
-            <a class="nav-link" href="{{ url_for('admin_recipes') }}"style="color:brown;">Recipe Administration</a>
+            <a class="nav-link" href="{{ url_for('admin_recipes') }}"style="color:azure;">Recipe Administration</a>
           </li>
           <li>
-            <a class="nav-link" href="{{ url_for('admin_users') }}"style="color:brown;">User Administration</a>
+            <a class="nav-link" href="{{ url_for('admin_users') }}"style="color:azure;">User Administration</a>
           </li>
           {% endif %}
           {% if current_user['role'] == 'admin' or current_user['role'] == 'contributor' %}
           <li>
-            <a class="nav-link" href="{{ url_for('add_recipe') }}"style="color:brown;">Add Recipe</a>
+            <a class="nav-link" href="{{ url_for('add_recipe') }}"style="color:azure;">Add Recipe</a>
           </li>
           {% endif %}
           <li>
-            <a class="nav-link" href="{{ url_for('view_recipes') }}"style="color:brown;">Recipes</a>
+            <a class="nav-link" href="{{ url_for('view_recipes') }}"style="color:azure;">Recipes</a>
           </li>
           <li>
-            <a class="nav-link" href="{{ url_for('about') }}" style="color:brown;">About</a>
+            <a class="nav-link" href="{{ url_for('about') }}" style="color:azure;">About</a>
           </li>
         </ul>
 
         <form class="form-inline my-2 my-lg-0" method="POST">
           <input class="form-control mr-sm-2" type="search" name="search_string" placeholder="Search"
             aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" formaction="/search" type="submit">Search</button>
+          <button class="btn btn-outline-success my-2 my-sm-0" formaction="/search" type="submit" style="background-color: lightblue !important; color: black !important; border:lightblue !important;">Search</button>
         </form>
       </div>
     </nav>
